@@ -1,8 +1,12 @@
 'use strict'
 
-const EventEmitter = require('events')
+class Clock{
 
-class Clock extends EventEmitter{
+    constructor(){
+        setInterval( () => {
+            this.thetime()
+        }, 1000)
+    }
 
     thetime(){
         let date =  new Date(),
@@ -15,11 +19,7 @@ class Clock extends EventEmitter{
 }
 
 var clock =  new Clock()
+clock.thetime()
 
-clock.on('titac',() => {
-    clock.thetime();
-})
 
-setInterval(() => {
-    clock.emit('titac');
-},1000)
+
