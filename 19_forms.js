@@ -22,6 +22,7 @@ function webServer(req, res){
                 console.log(templateString)
                 res.end(templateString)
                 console.log(querystring.parse(dataString))
+                console.log("aqui")
             })
     }
 }
